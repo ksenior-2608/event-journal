@@ -1,0 +1,36 @@
+<%- include("partials/header"); -%>
+
+<h1>Home</h1>
+<%= homeContent %>
+
+<div class="card-deck mb-3 text-center homepage-div">
+
+    <% events.forEach(function(event){ %>
+
+    <% if(event.descript.length>25){%>
+    <% var body=event.descript.substr(0,25) +"..."; %>
+    <% }else{ %>
+    <% var body=event.descript %>
+    <% } %>
+
+    <div class="card mb-4 box-shadow">
+        <div class="card event">
+            <img src="/uploads/<%= event.img %>" class="card-img-top img-fluid" alt="cardImage">
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><h5 class="card-title"> <%= event.title %> </h5></li>
+                    <li class="list-group-item"> <%= event.date %> </li>
+                    <li class="list-group-item"> <%= event.time %> </li>
+                    <li class="list-group-item">  <%= body %>  </li>
+                </ul>
+            </div>
+        </div>
+        <div class="card event">
+        </div>
+    </div>
+
+    <% }); %>
+
+</div>
+
+<%- include("partials/footer"); -%>

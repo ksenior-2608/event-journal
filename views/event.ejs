@@ -1,0 +1,25 @@
+<%- include("partials/header") -%>
+
+<div class="jumbotron">
+    <img src="/uploads/<%= eventDetails.img %>" class="img-fluid event-img" alt="event-img">
+    <h5 class="display-4"><%= eventDetails.title %></h5>
+    <ul class="lead">
+        <li> Date: <%= eventDetails.date %> </li>
+        <li> Time: <%= eventDetails.time %> </li>
+    </ul>
+    <p> <%= eventDetails.descript %></p>
+    <div class="btn-group">
+        <a href="/edit/<%= eventDetails.id %>" class="btn btn-outline-info" role="button" aria-disabled="true">Edit Event</a>
+        <a href="/delete/<%= eventDetails.id %>" class="btn btn-info" role="button" aria-disabled="true">Delete Event</a>
+    </div>
+</div>
+<div style="text-align: center;">
+    <form action="/" method="POST">
+        <input type="hidden" name="eventId" value="<%= eventDetails.id %>">
+        <button class="btn btn-outline-info btn-lg" type="submit" name="button">Share Event</button>
+    </form>
+</div>
+
+
+
+<%- include("partials/footer") -%>

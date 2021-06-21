@@ -1,0 +1,35 @@
+<%- include("partials/header") -%>
+
+<div id="content" class="container">
+    <h1>Create Event</h1>
+    <div class="card">
+        <div class="card-body">
+            <form action="/home" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="event-title">Name</label>
+                    <input type="text" class="form-control" id="event-title" name="eventTitle">
+                </div>
+                <div class="form-group">
+                    <label for="eventDate">Date</label><br>
+                    <input type="date" name="eventDate">
+                </div>
+                <div class="form-group">
+                    <label for="eventTime">Time</label><br>
+                    <input type="time" name="eventTime">
+                </div>
+                <div class="form-group">
+                    <label for="img">Select image:</label> &nbsp;
+                    <input type="file" id="img" name="eventImg">
+                </div>
+                <div class="form-group">
+                    <label for="event-body">Description</label>
+                    <textarea name="eventDescript" class="form-control" rows="2"></textarea>
+                </div>
+                <button type="submit" class="btn btn-info">Submit</button>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<%- include("partials/footer") -%>
